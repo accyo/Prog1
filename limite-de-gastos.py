@@ -17,12 +17,15 @@ while True:
             media += float(entrada[i])
         
         if (media/len(entrada)) > media_mensal:
-            for i in range(len(entrada)):           
-                acima_limite.append(float(entrada[i]))
+            medias = ' '
+                
+            for i in range(len(entrada)):
+                medias = float(entrada[i])
+                acima_limite.append(str(medias))
             
         elif (media /len(entrada)) < (media_mensal / 2):
             break
-
+          
 
         
 
