@@ -1,32 +1,28 @@
-# Limite de Gastos
-
-media_mensal = float(input()) # Limite gasto mensal (média)
+media_mensal = float(input())
 acima_limite = []
 
-while True:
+
+while True: 
+    gastos = []
+    entrada = input()
     
-    media = 0 
-    e = input()     # entrada 
-    entrada = e.split() # split da entrada 
-    
-    if e == 'fim':
+    if entrada == 'fim':
         break
     
     else: 
-        for i in range(len(entrada)):
-            media += float(entrada[i])
+        media = 0
+        valores = entrada.split()
         
-        if (media/len(entrada)) > media_mensal:
-            medias = ' '
-                
-            for i in range(len(entrada)):
-                medias = float(entrada[i])
-                acima_limite.append(str(medias))
+        for i in range(len(valores)):
+            media += float(valores[i])
+            gastos.append(float(valores[i]))
             
-        elif (media /len(entrada)) < (media_mensal / 2):
+        if media > media_mensal:
+            acima_limite.append(gastos)
+            
+        elif (media /len(valores)) < (media_mensal / 2):
             break
-          
 
-        
-
-print(*acima_limite)
+for gasto in range(len(acima_limite)):
+    print(*acima_limite[gasto])
+       
