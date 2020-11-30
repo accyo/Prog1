@@ -6,23 +6,24 @@ acima_limite = []
 while True:
     
     media = 0 
-    ent = input()
-    entrada = ent.split()
+    e = input()     # entrada 
+    entrada = e.split() # split da entrada 
     
-    if ent == 'fim':
+    if e == 'fim':
         break
     
     else: 
         for i in range(len(entrada)):
             media += float(entrada[i])
         
-        if (media / len(entrada)) > media_mensal: 
-            acima_limite.append(ent)
+        if (media/len(entrada)) > media_mensal:
+            for i in range(len(entrada)):           
+                acima_limite.append(float(entrada[i]))
             
         elif (media /len(entrada)) < (media_mensal / 2):
             break
 
+
         
 
-for sequencia in acima_limite:
-    print (sequencia)
+print(*acima_limite)
