@@ -1,3 +1,3 @@
-# Prog1 - Python3
+# Prog1
 
-alguns códigos de questões do tst @ ufcg
+Resoluções de algumas questões do TST, da disciplina de Programação1 da UFCG. 
