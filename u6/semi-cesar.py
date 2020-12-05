@@ -22,8 +22,7 @@ def cesar(msg, deslocamento):
         
         if letra not in alfabeto:
             criptografia += letra
-        
-        
+                
     return criptografia
     
 assert cesar("exemplo", 4) == "ibiqtps"
