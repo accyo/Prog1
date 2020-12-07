@@ -15,7 +15,7 @@ def cesar(msg, deslocamento):
             if letra == alfabeto[i]: 
                 valor_deslocamento = deslocamento + i # soma posicao da letra + número do deslocamento
             
-                if valor_deslocamento > 26: # se o deslocamento ultrapassar o tamanho do alfabeto
+                if valor_deslocamento >= 26: # se o deslocamento ultrapassar o tamanho do alfabeto
                     valor_deslocamento = valor_deslocamento - 26 #voltar para o ínicio do alfabeto 
                 
                 criptografia += alfabeto[valor_deslocamento]
