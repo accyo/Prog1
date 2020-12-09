@@ -1,29 +1,16 @@
 # Troca Vizinhos 
 
-def troca_vizinhos_condicional(lista): 
+def troca_vizinhos_condicional(seq): 
 
-    troca_vizinhos = []
-
-    for palavra in range(1, len(lista), 2): 
+    for palavra in range(len(seq)-1): 
         
-        if lista[palavra-1] > lista[palavra]:
-            troca_vizinhos.append(lista[palavra])
-            troca_vizinhos.append(lista[palavra-1])
+        if seq[palavra] > seq[palavra+1]:
+            
+            if palavra % 2 == 0:
+                seq[palavra], seq[palavra+1] = seq[palavra+1], seq[palavra]
 
-        elif lista[palavra] > lista[palavra-1]:
-            troca_vizinhos.append(lista[palavra-1])
-            troca_vizinhos.append(lista[palavra])
-    
-    ultimo = lista[-1]
-    
-    if len(lista) % 2 != 0: 
-        troca_vizinhos.append(ultimo)
-    
-    return troca_vizinhos
-
+    return seq              
 
 palavras = ["casa", "abacate", "boi", "casa", "jornal", "elo", "faca"]
-assert troca_vizinhos_condicional(palavras) == ["abacate",  "casa", "boi", "casa", "elo", "jornal", "faca"]
-
-palavras = ["elo", "diretor", "casa", "boi"]
-assert troca_vizinhos_condicional(palavras) == ["diretor", "elo", "boi", "casa"]
+troca_vizinhos_condicional(palavras)
+assert palavras == ["abacate",  "casa", "boi", "casa", "elo", "jornal", "faca"]
